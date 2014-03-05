@@ -1,0 +1,16 @@
+*~
+*.pyc
+*.pyo
+*.mo
+*.egg
+*.EGG
+*.egg-info
+*.EGG-INFO
+.*.cfg
+.hg/
+.bzr/
+.svn/
+.project
+.pydevproject
+# OSX
+.DS_Store
