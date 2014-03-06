@@ -35,60 +35,65 @@
             };
             // # Use $.extend function to merge default settings with given settings
             options = $.extend(defaults, options);
-            var wrapper_id = $(this).parents('div.portletWrapper').attr('id');
+            var wrapper_id = $(this).parents('div.portletWrapper').attr('id'),
+                portlet_header = $(this).find('dt');
             if (read_data(wrapper_id) === null) {
                 if ((options.default_state === "collapsed")) {
-                    methods.collapse.apply(this);
+                    methods.collapse.apply(portlet_header);
                 } else {
-                    methods.expand.apply(this);
+                    methods.expand.apply(portlet_header);
                 }
             } else {
                 if ((read_data(wrapper_id) === "collapsed")) {
-                    methods.collapse.apply(this);
+                    methods.collapse.apply(portlet_header);
                 } else {
-                    methods.expand.apply(this);
+                    methods.expand.apply(portlet_header);
                 }
             }
         },
         expand : function () {
-            var parent = $(this).parents('div.portletWrapper');
-            parent.find('dd').each(function () {
+            var wrapper = $(this).parents('div.portletWrapper'),
+                parent = $(this).parent();
+            wrapper.find('dd').each(function () {
                 if(!$(this).hasClass("portletFooter")) {
                     $(this).slideDown();
                 }
             });
-            if ($(this).hasClass('portletCollapsed')) {
-                $(this).removeClass("portletCollapsed");
+            if (parent.hasClass('portletCollapsed')) {
+                parent.removeClass("portletCollapsed");
             }
-            save_data(parent.attr('id'), 'expanded');
+            save_data(wrapper.attr('id'), 'expanded');
             return this;
         },
         collapse : function () {
-            var parent = $(this).parents('div.portletWrapper');
-            parent.find('dd').each(function () {
+            var wrapper = $(this).parents('div.portletWrapper'),
+                parent = $(this).parent();
+            wrapper.find('dd').each(function () {
                 if(!$(this).hasClass("portletFooter")) {
                     $(this).slideUp();
                 }
             });
-            if (!$(this).hasClass('portletCollapsed')) {
-                $(this).addClass("portletCollapsed");
+
+            if (!parent.hasClass('portletCollapsed')) {
+                parent.addClass("portletCollapsed");
             }
-            save_data(parent.attr('id'), "collapsed");
+            save_data(wrapper.attr('id'), "collapsed");
             return this;
         },
         toggle : function () {
-            var parent = $(this).parents('div.portletWrapper'),
-                parent_id = parent.attr('id');
-            parent.find('dd').each(function () {
+            var wrapper = $(this).parents('div.portletWrapper'),
+                parent = $(this).parent(),
+                wrapper_id = wrapper.attr('id');
+            wrapper.find('dd').each(function () {
                 if(!$(this).hasClass("portletFooter")) {
                     $(this).slideToggle();
                 }
             });
-            $(this).toggleClass("portletCollapsed");
-            if (read_data(parent_id) === "expanded") {
-                save_data(parent_id, "collapsed");
+            parent.toggleClass("portletCollapsed");
+            if (read_data(wrapper_id) === "expanded") {
+                save_data(wrapper_id, "collapsed");
             } else {
-                save_data(parent_id, "expanded");
+                save_data(wrapper_id, "expanded");
             }
             return this;
         }
