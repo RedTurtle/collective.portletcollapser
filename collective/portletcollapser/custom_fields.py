@@ -23,7 +23,10 @@ class PortletStateVocabulary(object):
 
     def __call__(self, context):
         site = getSite()
-        request = site.REQUEST
+        try:
+            request = site.REQUEST
+        except AttributeError:
+            request = None
         return SimpleVocabulary.fromItems((
                       (translate(_(u"Collapsed"), context=request), "collapsed"),
                       (translate(_(u"Expanded"), context=request), "expanded"),))

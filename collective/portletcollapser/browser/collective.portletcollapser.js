@@ -16,37 +16,16 @@
 
 (function ($) {
     "use strict";
-
-    // function cookie_value() {
-    //     var c_value = document.cookie, c_start = c_value.indexOf(" expandcollapse=");
-    //     if (c_start === -1) {
-    //         c_start = c_value.indexOf("expandcollapse=");
-    //     }
-    //     if (c_start === -1) {
-    //         c_value = null;
-    //     } else {
-    //         var c_start = c_value.indexOf("=", c_start) + 1, c_end = c_value.indexOf(";", c_start);
-    //         if (c_end === -1) {
-    //            c_end = c_value.length;
-    //         }
-    //         c_value = unescape(c_value.substring(c_start,c_end));
-    //     }
-    //     return c_value;
-    // }
-
     function save_data(key, value) {
         if ((window.sessionStorage !== "undefined") && window.sessionStorage !== null) {
             sessionStorage.setItem(key, value);
         }
     }
-
     function read_data(key) {
         if ((window.sessionStorage !== "undefined") && window.sessionStorage !== null) {
             return sessionStorage.getItem(key);
         }
-        // return cookie_value();
     }
-
     var methods = {
         init : function (options) {
             // # Set base settings
@@ -78,6 +57,9 @@
                     $(this).slideDown();
                 }
             });
+            if ($(this).hasClass('portletCollapsed')) {
+                $(this).removeClass("portletCollapsed");
+            }
             save_data(parent.attr('id'), 'expanded');
             return this;
         },
@@ -88,6 +70,9 @@
                     $(this).slideUp();
                 }
             });
+            if (!$(this).hasClass('portletCollapsed')) {
+                $(this).addClass("portletCollapsed");
+            }
             save_data(parent.attr('id'), "collapsed");
             return this;
         },
@@ -99,6 +84,7 @@
                     $(this).slideToggle();
                 }
             });
+            $(this).toggleClass("portletCollapsed");
             if (read_data(parent_id) === "expanded") {
                 save_data(parent_id, "collapsed");
             } else {
