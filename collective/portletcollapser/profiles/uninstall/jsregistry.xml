@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
+
+ <javascript id="++resource++portletcollapser.js"
+             remove="True"/>
+  
+  <javascript remove="True"
+             id="++resource++portletcollapser.rules.js" />
+</object>

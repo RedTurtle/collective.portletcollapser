@@ -7,6 +7,16 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <i18n:registerTranslations directory="locales" />
+  <include package="plone.app.registry" />
+
+  <permission
+        id="collective.portletcollapser.ManageSettings"
+        title="collective.portletcollapser: Manage settings"
+        />
+
+  <include package=".browser" />
+
   <genericsetup:registerProfile
       name="default"
       title="collective.portletcollapser"
@@ -14,6 +24,19 @@
       description="Installs the collective.portletcollapser package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
   
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.portletcollapser: uninstall"
+      directory="profiles/uninstall"
+      description="Uninstalls the collective.portletcollapser package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  
+  <utility
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    component=".custom_fields.PortletStateVocabularyFactory"
+    name="portletcollapser-portlestates-vocabulary"
+    />
+
 </configure>

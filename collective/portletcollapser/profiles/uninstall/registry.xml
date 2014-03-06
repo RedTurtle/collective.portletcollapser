@@ -1,0 +1,8 @@
+<registry>
+    <record interface="collective.portletcollapser.interfaces.IPortletCollapserSettings"
+            field="selectors"
+            delete="True"/>
+    <record interface="collective.portletcollapser.interfaces.IPortletCollapserSettings"
+            field="delay"
+            delete="True"/>
+</registry>

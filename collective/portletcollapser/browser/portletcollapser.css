@@ -1,0 +1,9 @@
+div.selectorSettings > .row {
+    border-left: 7px solid #CCCCCC;
+    margin-bottom: 1em;
+    padding-left: 0.5em;
+}
+
+div.selectorSettings > .row .object-widget > .widget {
+    margin-bottom: 0.5em;
+}

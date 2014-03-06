@@ -1,0 +1,38 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.portletcollapser">
+
+  <browser:resource
+      name="collective.portletcollapser.js"
+      file="collective.portletcollapser.js"
+      />
+  
+  <browser:resource
+      name="portletcollapser.css"
+      file="portletcollapser.css"
+      />
+
+  <browser:resource
+      name="collapser.png"
+      file="collapser.png"
+      layer="collective.portletcollapser.interfaces.IPortletCollapserLayer"
+      />
+
+  <browser:page
+      name="collective.portletcollapser.rules.js"
+      for="*"
+      class=".portletcollapser_rules.JavaScript"
+      layer="collective.portletcollapser.interfaces.IPortletCollapserLayer"
+      permission="zope.Public"
+      />
+
+    <!-- Control panel -->
+    <browser:page
+        name="portletcollapser-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.PortletCollapserSettingsControlPanel"
+        permission="collective.portletcollapser.ManageSettings"
+        layer="collective.portletcollapser.interfaces.IPortletCollapserLayer"
+        />
+</configure>
