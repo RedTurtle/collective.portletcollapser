@@ -10,8 +10,10 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 try:
     from zope.app.schema.vocabulary import IVocabularyFactory
+    from zope.app.component.hooks import getSite
 except ImportError:
     from zope.schema.interfaces import IVocabularyFactory
+    from zope.component.hooks import getSite
 
 
 class PortletStateVocabulary(object):
@@ -20,9 +22,8 @@ class PortletStateVocabulary(object):
     implements(IVocabularyFactory)
 
     def __call__(self, context):
-        context = getattr(context, 'context', context)
-        request = aq_get(context, 'REQUEST', None)
-
+        site = getSite()
+        request = site.REQUEST
         return SimpleVocabulary.fromItems((
                       (translate(_(u"Collapsed"), context=request), "collapsed"),
                       (translate(_(u"Expanded"), context=request), "expanded"),))
