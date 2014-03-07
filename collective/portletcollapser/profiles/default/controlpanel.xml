@@ -4,7 +4,7 @@
         i18n:domain="collective.portletcollapser">
 
     <configlet
-        title="collective.portletcollapser settings"
+        title="Portlet Collapser Settings"
         action_id="portletcollapser-settings"
         appId="collective.portletcollapser"
         category="Products"

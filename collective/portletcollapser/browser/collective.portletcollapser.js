@@ -35,6 +35,7 @@
             };
             // # Use $.extend function to merge default settings with given settings
             options = $.extend(defaults, options);
+            $(this).addClass('collapsiblePortlet');
             var wrapper_id = $(this).parents('div.portletWrapper').attr('id'),
                 portlet_header = $(this).find('dt');
             if (read_data(wrapper_id) === null) {

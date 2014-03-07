@@ -7,3 +7,7 @@ div.selectorSettings > .row {
 div.selectorSettings > .row .object-widget > .widget {
     margin-bottom: 0.5em;
 }
+
+dl.collapsiblePortlet dt {
+    cursor: pointer;
+}

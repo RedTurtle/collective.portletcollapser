@@ -12,7 +12,7 @@ class PortletCollapserEditForm(controlpanel.RegistryEditForm):
     """
     schema = IPortletCollapserSettings
     id = "PortletCollapserSettingsEditForm"
-    label = _(u"Portlet collapser settings")
+    label = _(u"Portlet Collapser Settings")
     description = _(u"help_portletcollapser_settings_editform",
                     default=u"Manage on which elements the portlet collapser plugin must be activated")
 

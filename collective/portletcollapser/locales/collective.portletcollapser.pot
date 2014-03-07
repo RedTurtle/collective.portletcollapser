@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-06 09:33+0000\n"
+"POT-Creation-Date: 2014-03-07 11:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Changes saved"
 msgstr ""
 
-#: ../custom_fields.py:27
+#: ../custom_fields.py:31
 msgid "Collapsed"
 msgstr ""
 
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Edit cancelled"
 msgstr ""
 
-#: ../custom_fields.py:28
+#: ../custom_fields.py:32
 msgid "Expanded"
 msgstr ""
 
@@ -46,7 +46,8 @@ msgid "Portlet"
 msgstr ""
 
 #: ../browser/controlpanel.py:15
-msgid "Portlet collapser settings"
+#: ../profiles/default/controlpanel.xml
+msgid "Portlet Collapser Settings"
 msgstr ""
 
 #: ../interfaces.py:16
@@ -62,27 +63,23 @@ msgid "Save and invalidate JS cache"
 msgstr ""
 
 #. Default: "Insert a css selector for the portlet where you want to activate the expand/collapse behaviour. For example 'dl.myPortletClass'."
-#: ../custom_fields.py:36
+#: ../custom_fields.py:40
 msgid "collapser_cssselector_help"
 msgstr ""
 
 #. Default: "Portlet CSS Selector"
-#: ../custom_fields.py:35
+#: ../custom_fields.py:39
 msgid "collapser_cssselector_title"
 msgstr ""
 
 #. Default: "Select default state for this portlet."
-#: ../custom_fields.py:40
+#: ../custom_fields.py:44
 msgid "collapser_defaultstate_help"
 msgstr ""
 
 #. Default: "Portlet default state"
-#: ../custom_fields.py:39
+#: ../custom_fields.py:43
 msgid "collapser_defaultstate_title"
-msgstr ""
-
-#: ../profiles/default/controlpanel.xml
-msgid "collective.portletcollapser settings"
 msgstr ""
 
 #. Default: "Manage on which elements the portlet collapser plugin must be activated"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-03-06 09:33+0000\n"
+"POT-Creation-Date: 2014-03-07 11:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Cecchi Andrea <andrea.cecchi@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "Annulla"
 msgid "Changes saved"
 msgstr "Modifiche salvate"
 
-#: ../custom_fields.py:27
+#: ../custom_fields.py:31
 msgid "Collapsed"
 msgstr "Collassata"
 
@@ -30,7 +30,7 @@ msgstr "Collassata"
 msgid "Edit cancelled"
 msgstr "Modifiche annullate"
 
-#: ../custom_fields.py:28
+#: ../custom_fields.py:32
 msgid "Expanded"
 msgstr "Espansa"
 
@@ -43,8 +43,9 @@ msgid "Portlet"
 msgstr ""
 
 #: ../browser/controlpanel.py:15
-msgid "Portlet collapser settings"
-msgstr "Configurazione Portlet collapser"
+#: ../profiles/default/controlpanel.xml
+msgid "Portlet Collapser Settings"
+msgstr "Configurazione Portlet Collapser"
 
 #: ../interfaces.py:16
 msgid "Portlets configuration"
@@ -59,28 +60,24 @@ msgid "Save and invalidate JS cache"
 msgstr "Salva e invalida la cache JS"
 
 #. Default: "Insert a css selector for the portlet where you want to activate the expand/collapse behaviour. For example 'dl.myPortletClass'."
-#: ../custom_fields.py:36
+#: ../custom_fields.py:40
 msgid "collapser_cssselector_help"
 msgstr "Inserisci un selettore CSS per la portlet in cui vuoi attivare la modalità di espandi/collassa. Per esempio 'dl.myPortletClass'."
 
 #. Default: "Portlet CSS Selector"
-#: ../custom_fields.py:35
+#: ../custom_fields.py:39
 msgid "collapser_cssselector_title"
 msgstr "Selettore CSS portlet"
 
 #. Default: "Select default state for this portlet."
-#: ../custom_fields.py:40
+#: ../custom_fields.py:44
 msgid "collapser_defaultstate_help"
 msgstr "Seleziona lo stato di default per questa portlet."
 
 #. Default: "Portlet default state"
-#: ../custom_fields.py:39
+#: ../custom_fields.py:43
 msgid "collapser_defaultstate_title"
 msgstr "Stato di default della portlet"
-
-#: ../profiles/default/controlpanel.xml
-msgid "collective.portletcollapser settings"
-msgstr "Configurazioni di collective.portletcollapser"
 
 #. Default: "Manage on which elements the portlet collapser plugin must be activated"
 #: ../browser/controlpanel.py:16
