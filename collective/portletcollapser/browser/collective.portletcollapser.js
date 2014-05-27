@@ -63,6 +63,9 @@
             if (parent.hasClass('portletCollapsed')) {
                 parent.removeClass("portletCollapsed");
             }
+            if (!parent.hasClass('portletExpanded')) {
+                parent.addClass("portletExpanded");
+            }
             save_data(wrapper.attr('id'), 'expanded');
             return this;
         },
@@ -75,6 +78,9 @@
                 }
             });
 
+            if (parent.hasClass('portletExpanded')) {
+                parent.removeClass("portletExpanded");
+            }
             if (!parent.hasClass('portletCollapsed')) {
                 parent.addClass("portletCollapsed");
             }
@@ -90,7 +96,7 @@
                     $(this).slideToggle();
                 }
             });
-            parent.toggleClass("portletCollapsed");
+            parent.toggleClass("portletCollapsed").toggleClass("portletExpanded");
             if (read_data(wrapper_id) === "expanded") {
                 save_data(wrapper_id, "collapsed");
             } else {
